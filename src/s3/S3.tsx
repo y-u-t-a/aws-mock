@@ -9,13 +9,23 @@ export default class S3 extends React.Component {
     return (
       <Container>
         <h1>S3 バケット一覧</h1>
-        <div className="float-right">
-          <Button
-            href='/s3/bucket/new'
-          >バケット作成</Button>
-        </div>
+        { buttons }
         <S3BucketList />
       </Container>
     )
   }
 }
+
+const buttons = (
+  <div className="float-right">
+    <Button
+      variant="danger"
+      disabled={ true }
+    >バケット削除</Button>
+    {' '}
+    <Button
+      variant="primary"
+      href='/s3/bucket/new'
+    >バケット作成</Button>
+  </div>
+)
